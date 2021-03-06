@@ -1,1 +1,3 @@
- proj/proj/local_settings.py
+proj/proj/local_settings.py
+proj/proj/__pycache__/settings.cpython-39.pyc
+proj/proj/__pycache__/local_settings.cpython-39.pyc
