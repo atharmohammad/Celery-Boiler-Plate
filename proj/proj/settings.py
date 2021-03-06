@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+from .local_Settings import * as local_Setting
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c2&mn=qmejpq(dt!wqxoniba!(zzwq!3(!ph0^k$gnpz7wd_y@'
+SECRET_KEY = local_Setting.secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -121,7 +121,7 @@ USE_TZ = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'code.gennady@gmail.com'
-EMAIL_HOST_PASSWORD='bogmdgpiddeoffqr'
+EMAIL_HOST_PASSWORD=local_Setting.email_host_password
 EMAIL_PORT= 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'code.gennady@gmail.com'
