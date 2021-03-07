@@ -12,6 +12,6 @@ app.config_from_object('django.conf:settings',namespace='CELERY')
 
 app.autodiscover_tasks()
 
-@app.task(bind=True)
+@app.task(bind=True) #It is to debug celery, any task fails will not show much explained error if this is not defined
 def debug_task(self):
     print('Request: {0!r}'.format(self.request))
