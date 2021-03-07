@@ -10,10 +10,10 @@ Command Reference
 # Run Celery
     celery -A NAMEOFINSTANCE worker --loglevel=info
 
-    celery -A core worker --loglevel=info
+    celery -A proj worker --loglevel=info
 
     [Windows OS]
-    celery -A core worker -l info --pool=solo
+    celery -A proj worker -l info --pool=solo
 
 # Run RabbitMQ (On Windows)
 
@@ -41,4 +41,7 @@ rabbitmq-service.bat stop
 
 #to start beat
 celery -A proj beat -l INFO
+
+#To create a cache table 
+python manage.py create cachetable --dry-run
 

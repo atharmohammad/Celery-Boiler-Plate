@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'task1',
     'task2',
     'flowers',
-    'django_celery_beat'
+    'django_celery_beat',
+    'django_celery_results'
 ]
 
 MIDDLEWARE = [
@@ -138,6 +139,19 @@ CELERY_BEAT_SCHEDULE={
     },
 
 }
+
+#To define a backend for django_celery_results
+CELERY_RESULT_BACKEND = 'django-db'
+
+#To define cache backend for celery
+# CELERY_RESULT_BACKEND = 'default'
+
+# CACHES = { #run python manage.py create cachetable --dry-run to create a cache table
+#     'default':{
+#         'BACKEND':'django.core.cache.backends.db.DatabaseCache',
+#         'LOCATION':'cachedb'
+#     }
+# }
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
